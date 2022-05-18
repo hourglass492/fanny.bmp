@@ -217,6 +217,21 @@ meterpreter > run post/windows/gather/forensics/fanny_bmp_check
 
     - dll_installer.dll [will provide soon]
 
+### Replication in VirtualBox
+
+Note: The original experiments were done in qume, but this will provide a basic walk through on how to replicate the attack in virtual box.
+
+First a vulnerable windows XP is needed in order to work on. Archive.org has a VDI file that you are able to import into virtual box for a working windows XP SP 3 machine. We have not independently verified this is malware free, so use proper caution.
+
+[https://archive.org/details/xp51_20191108](https://archive.org/details/xp51_20191108)
+
+From here you must install the guest additions onto the client WinXP machine.
+
+Once you have guest additions installed, it is possible to simulate a usb flash drive using the shared folder function. Simply place the malware files into a folder and then share it to the virtual machine. An important note, the shared drive must be mounted as a D, E, F, G, H, I, or J drive or else it will not execute. (these correspond to the .lnk files).
+
+Once shared, you must open the shared file in order to trigger the exploit.
+
+
 
 ### If you spot an mistake, please let me now.
 
